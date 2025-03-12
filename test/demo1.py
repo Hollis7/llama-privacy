@@ -3,7 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 # %%
 # 设置本地模型路径
-local_model_path = "./llama-2-7b-hf"  # 你的本地模型文件夹路径
+local_model_path = "data-tmp/new_model"  # 你的本地模型文件夹路径
 
 # 加载分词器和模型
 tokenizer = AutoTokenizer.from_pretrained(local_model_path)
@@ -19,7 +19,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 # %%
 # 定义输入文本
-input_text = "What is cat?"
+input_text = "生成一篇与环境污染有关的论文摘要，探讨其对人类健康和环境的影响。"
 # 将输入文本编码为模型输入，并显式传递 attention_mask
 inputs = tokenizer(
     input_text,
